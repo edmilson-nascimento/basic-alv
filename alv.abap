@@ -7,12 +7,12 @@ report yteste.
 
 
 tables:
-  snwd_ad .
+  snwd_texts .
 
 types:
   begin of ty_out,
     node_key type snwd_texts-node_key,
-    texts     type snwd_texts-texts,
+    text     type snwd_texts-text,
     city     type snwd_ad-city,
     street   type snwd_ad-street,
     country  type snwd_ad-country,
@@ -20,26 +20,26 @@ types:
 
 * Dados Globais
 data:
-  ad_tab    type table of snwd_ad,
-  ad_line   type snwd_ad,
+  ad_tab     type table of snwd_ad,
+  ad_line    type snwd_ad,
   texts_tab  type table of snwd_texts,
   texts_line type snwd_texts,
-  out_tab   type table of ty_out,
-  out_line  type ty_out .
+  out_tab    type table of ty_out,
+  out_line   type ty_out .
 
 
 * Tela de selecao (filtro)
 select-options:
-  key for snwd_ad-node_key obligatory .
+  key for snwd_texts-node_key obligatory .
 
 * Configurando valores Iniciais (opcional)
-*initialization .
-*
-*  key-sign   = 'I' .
-*  key-option = 'BT' .
-*  key-low    = '005056A215981EE9AE932919D6BB8B29' .
-*  key-high   = '005056A215981EE9AE932919D6C84B29' .
-*  append key to key[] .
+initialization .
+
+  key-sign   = 'I' .
+  key-option = 'BT' .
+  key-low    = '005056A215981EE9AE932919D6BB8B29' .
+  key-high   = '005056A215981EE9AE932919D6C84B29' .
+  append key to key[] .
 
 
 * Busca de dados
@@ -90,7 +90,7 @@ form f_organiza .
       if sy-subrc eq 0 .
 
         out_line-node_key = texts_line-node_key .
-        out_line-texts     = texts_line-texts .
+        out_line-text     = texts_line-text .
         out_line-city     = ad_line-city .
         out_line-street   = ad_line-street .
         out_line-country  = ad_line-country .
