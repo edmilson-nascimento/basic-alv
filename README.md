@@ -11,6 +11,5 @@ Desenvolvimento de um relatório ALV simplificado.
 Um modelo básico de ALV que pode servir de modelo para novos programas.
 
 ## Arquivos ##
-📌 [basic.abap](files/basic.abap)
-
+📌 [basic.abap](files/basic.abap)<br/>
 📌 [condition_hotspot.abap](files/condition_hotspot.abap)
